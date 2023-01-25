@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+}
+.sombra{
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.53);
+}
+body{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-areas: "aside main";
+}
+.navLateral{
+    /*height: 900px;*/
+    grid-area: aside;
+    margin:5px;
+    background-color: #ffffff;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.53);
+    z-index: 1;
+    align-items: center;
+}
+.principal{
+    display: grid;
+    grid-area: main;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 175px 1fr 70px auto;
+    grid-template-areas: "saludo saludo herramientas"
+                        "timeline timeline calendar"
+                        "timeline timeline calendar"
+                        "subnav subnav calendar"
+                        "people people calendar";
+}
+span{
+    width:125%;
+}
+.menuPrincipal{
+    display:grid;
+    align-content: center;
+    justify-content: center;
+}
+.menuPrincipal ul,.opcionesMenu ul{
+    list-style: none;
+}
+.material-symbols-outlined{
+    /*background-color: green;
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.53);
+     */
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    padding:2px;
+    margin-top:10px;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    color:black;
+
+}
+.material-symbols-outlined:hover{
+    color:white;
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.53);
+    background-color: green;
+
+}
+a:link{
+    /*background-color: green;*/
+    text-decoration: none;
+}
+.menuPrincipal :first-of-type(span){
+    margin-top: 20px;
+}
+.parteSuperior{
+    display:grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.herramientas-cabecera{
+    grid-area: herramientas;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.personas-cabecera{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.saludo-cabecera{
+    display:grid;
+    align-content: center;
+    margin-left: 20px;
+    grid-area: saludo;
+}
+.busqueda-cabecera > form{
+    display:flex;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+    align-items: center;
+}
+.busqueda-cabecera span{
+    margin: 0;
+    height:30px;
+    color: #a6a6a6;
+}
+
+input{
+    height: 20px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 5px;
+
+}
+input::placeholder{
+    color:#a6a6a6;
+}
+img,svg{
+    height: 40px;
+    border-radius: 50%;
+    margin:5px
+}
+.timeline{
+    margin-left: 20px;
+    grid-area: timeline;
+}
+.cabecera-timeline{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navegacion-timeline{
+    display:flex;
+}
+.navegacion-timeline span{
+    color:green;
+}
+.cuerpo-timeline{
+    align-self: center;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.card-timeline{
+    border-radius: 15px;
+    width: 40%;
+    height: 200px;
+    background-color: #028734;
+}
+.card-timeline>*{
+    margin-left: 10%;
+    color: white;
+}
+.card-timeline>h4{
+    margin-top: 50px;
+    font-size: 1.5em;
+}
+.card-timeline>button{
+    margin-top: 20px;
+    background-color: #F0D433;
+    border: none;
+    width: 40%;
+    height: 35px;
+    color:black;
+    border-radius: 5px;
+    font-size: medium;
+}
+.subnav{
+    grid-area: subnav;
+    display:flex;
+}
+.subnav>ul{
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.subnav>ul>li:first-child{
+    font-weight: bold;
+}
+.li-subnav{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.people{
+    grid-area: people;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.card-people{
+    margin:20px;
+    background-color: #E3FFEE;
+    border-radius: 15px;
+    min-width:400px;
+    max-width:500px;
+
+}
+.header-card-people{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-card-people>*{
+    margin-left: 10px;
+}
+.cuerpo-card-people{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.valoracion-cuerpo-card-people{
+    margin-left: 20px;
+}
+.work-valoracion-cuerpo-card-people{
+    display:flex;
+    align-items: center;
+
+}
+.task-valoracion-cuerpo-card-people{
+    display:flex;
+    align-items: center;
+}
+.cuerpo-card-people span{
+
+    margin-top:0px;
+    padding: 0;
+    width:25px;
+    height: 25px;
+}
+.button-card-timeline{
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+.calendario{
+    grid-area: calendar;
+    background-color: white;
+    border-radius: 5px;
+    margin:20px;
+    margin-bottom: 40px;
+}
+.cabecera-calendario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:20px;
+    margin-top:10px;
+    margin-right: 20px;
+}
+.nav-cabecera-calendario{
+    display: flex;
+    margin-left: 20px;
+}
+.nav-cabecera-calendario span:hover{
+    background-color: #028734 !important;
+}
+.nav-cabecera-calendario a{
+   background-color: #dedddd;
+    border-radius: 50%;
+
+}
+.nav-cabecera-calendario span{
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin:0px;
+}
+.semana-calendario{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.semana-calendario>*{
+    color: #dedddd;
+    text-align: center;
+}
+.dia-semana-calendario{
+    margin-top: 20px;
+}
+.dia-semana-calendario>p:last-child{
+    margin-top: 10px;
+}
+.semana-calendario>.dia-semana-calendario:nth-child(3)>p:last-child{
+    background-color: #028734;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    /*margin-top:10px;*/
+}
+hr{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border:1px solid #dedddd ;
+}
+.citas-calendario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cita-calendario{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
