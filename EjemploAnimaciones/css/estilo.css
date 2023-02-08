@@ -1,0 +1,62 @@
+@keyframes entradaderecha {
+    0% {
+        margin-left: 100%;
+    }
+
+    50% {
+        margin-left: 50%;
+        margin-top:10%
+    }
+    100%{
+        margin-left:10%;
+        margin-top: 0%;
+    }
+}
+@keyframes entradaizquierda {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes entradatitulo{
+    from {
+        opacity: 0;
+        font-size: 1.5em;
+        color: firebrick;
+    }
+    to{
+        opacity: 1;
+        font-size: 1em;
+        color: black;
+    }
+}
+
+header{
+    height: 100px;
+    animation-delay: 100ms;
+    animation: entradatitulo 5s infinite;
+    animation-direction: alternate;
+}
+main{
+    display:block;
+}
+.izquierda{
+    margin:50px;
+    width:200px;
+    background-color: #028734;
+    animation-duration: 1s;
+    animation-name: entradaizquierda;
+}
+.derecha{
+    margin-left:10%;
+    width: 50%;
+    background-color: dimgray;
+    animation-duration: 2s;
+    animation-name: entradaderecha;
+    animation-fill-mode: backwards;
+}
