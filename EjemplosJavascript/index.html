@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de uso de javascript</title>
+
+
+</head>
+<body>
+  <h1>Hola Mundo</h1>
+  <h2>Bienvenidos a javascript</h2>
+    <p class="descripcion">Esto es un ejemplo de introducción a Javascript</p>
+  <h2>Características</h2>
+    <p class="descripcion">El código Javascript se ejecuta directamente en el navegador</p>
+
+  <button id="mostrarMas">Mostrar Más</button>
+  <button onclick="cambiarColor()">Cambiar Color</button>
+
+  <form>
+    <input placeholder="numerador" type="number" id="inputNumerador" name="numerador">
+    <input placeholder="denominador" type="number" id="inputDenominador" name="denominador">
+    <input type="button" onclick="calcularDivision()" value="Realizar Division">
+  </form>
+
+  <script>
+
+    //Con esto podemos acceder a toda la etiqueta completa del elemento
+    console.log(document.querySelector('h1').outerHTML);
+
+    //Con el siguiente ejemplo accedemos a todos los h2 que tiene el documento y mostramos solo el valor de la etiqueta
+    document.querySelectorAll('h2').forEach(function (h2){
+      console.log(h2.innerHTML);
+    });
+
+    //Podemos reaccionar a eventos producidos por elementos del HTML y cambiar propiedades o el propio valor
+    document.querySelector('#mostrarMas').addEventListener('click', function(){
+      document.querySelectorAll('p')[1].innerHTML="El código Javascript se ejecuta directamente en el navegador. " +
+              "Es un lenguaje con notación derivada de C pero de sintaxis más libre que Java ampliamente utilizado en la actualidad";
+    })
+
+    /*
+      También podemos crear funciones que sean la respuesta a una acción producida por el usuario o navegador en este caso
+      al evento onclick del botón Cambiar Color
+
+     */
+    function cambiarColor(){
+      document.querySelectorAll('.descripcion').forEach(function(p){
+        p.style.color='red';
+      })
+    }
+
+    function calcularDivision(){
+      const numerador = parseInt(document.getElementById('inputNumerador').value);
+      const denominador = parseInt(document.getElementById('inputDenominador').value);
+      const resultado= numerador/denominador
+
+
+      if(denominador!==0){
+        const p = document.body.appendChild(document.createElement('p'));
+        p.textContent=`El resultado de la división entre ${numerador}/${denominador} es: ${resultado}`;
+      }else{
+        alert("El denominador no puede ser 0")
+      }
+
+
+    }
+
+  </script>
+</body>
+</html>
