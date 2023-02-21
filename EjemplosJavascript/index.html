@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejemplos de uso de javascript</title>
-
-
+  <style>
+    p{
+      font-size:40px;
+    }
+  </style>
 </head>
 <body>
   <h1>Hola Mundo</h1>
@@ -15,6 +18,8 @@
 
   <button id="mostrarMas">Mostrar Más</button>
   <button onclick="cambiarColor()">Cambiar Color</button>
+  <button onclick="disminuirTamanyoLetra()">-</button>
+  <button onclick="aumentarTamanyoLetra()">+</button>
 
   <form>
     <input placeholder="numerador" type="number" id="inputNumerador" name="numerador">
@@ -61,8 +66,22 @@
       }else{
         alert("El denominador no puede ser 0")
       }
-
-
+    }
+    function aumentarTamanyoLetra(){
+      document.querySelectorAll('p').forEach(function (parrafo){
+        let tamLetra=getComputedStyle(parrafo).getPropertyValue('font-size');
+        tamLetra=parseInt(tamLetra);
+        tamLetra++;
+        parrafo.style.fontSize=tamLetra+'px';
+      })
+    }
+    function disminuirTamanyoLetra(){
+      document.querySelectorAll('p').forEach(function (parrafo){
+        let tamLetra=getComputedStyle(parrafo).getPropertyValue('font-size');
+        tamLetra=parseInt(tamLetra);
+        tamLetra--;
+        parrafo.style.fontSize=tamLetra+'px';
+      })
     }
 
   </script>
