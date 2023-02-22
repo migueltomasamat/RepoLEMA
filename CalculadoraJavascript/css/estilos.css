@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    text-align: right;
+}
+h1{
+    margin-bottom: 50px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botones ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botones article{
+    display: flex;
+}
+.botones article button{
+    background-color: blue;
+    color: white;
+    width: 35px;
+    height: 35px;
+}
+#cero{
+    width: 105px;
+}

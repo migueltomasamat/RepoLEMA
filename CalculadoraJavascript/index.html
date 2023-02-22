@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primera Calculadora</title>
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Supercalculadora</h1>
+  <input type="text" value="0">
+  <section class="botones">
+    <article class="primeraFila">
+      <button class="botonOperacion" onclick="borrarInput()">CE</button>
+      <button class="botonOperacion">M+</button>
+      <button class="botonOperacion">M=</button>
+      <button class="botonOperacion">/</button>
+    </article>
+    <article class="primeraFila">
+      <button class="botonNumerico" onclick="mostrarValorEnInput(9)">9</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(8)">8</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(7)">7</button>
+      <button class="botonOperacion">*</button>
+    </article>
+    <article class="segundaFila">
+      <button class="botonNumerico" onclick="mostrarValorEnInput(6)">6</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(5)">5</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(4)">4</button>
+      <button class="botonOperacion">-</button>
+    </article>
+    <article class="terceraFila">
+      <button class="botonNumerico" onclick="mostrarValorEnInput(3)">3</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(2)">2</button>
+      <button class="botonNumerico" onclick="mostrarValorEnInput(1)">1</button>
+      <button class="botonOperacion" >+</button>
+    </article>
+    <article class="cuartaFila">
+      <button id="cero" class="botonNumerico" onclick="mostrarValorEnInput(0)">0</button>
+      <button class="botonOperacion" onclick="total()">=</button>
+    </article>
+  </section>
+
+<script type="text/javascript" src="js/funciones.js"></script>
+</body>
+</html>
