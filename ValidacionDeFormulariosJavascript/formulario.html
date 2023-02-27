@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de formulario con Validación Javascript</title>
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+<h2>Ejemplo de formulario</h2>
+
+<form class="register">
+    <label for="inputNombre">Introduce tu nombre</label>
+    <article class="input-validacion">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <input id="inputNombre" name="nombre" type="text">
+    </article>
+
+
+    <label for="inputApellidos">Introduce tus apellidos</label>
+    <article class="input-validacion">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <input id="inputApellidos" name="apellidos" type="text">
+    </article>
+
+    <label for="inputContrasenya">Introduce tu contraseña</label>
+    <article class="input-validacion">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <input id="inputContrasenya" name="contrasenya" type="password">
+    </article>
+
+    <label for="inputRepetirContrasenya">Repite la contraseña</label>
+    <article class="input-validacion">
+        <ion-icon name="checkmark-circle-outline" id="check-contrasenya"></ion-icon>
+        <input id="inputRepetirContrasenya" name="contrasenya_validacion" type="password" oninput="comprobarRepeticionContrasenya()">
+    </article>
+
+    <label for="inputEmail">Introduce tu email</label>
+    <article class="input-validacion" id="quintoInput">
+        <ion-icon name="checkmark-circle-outline" id="check-email"></ion-icon>
+        <input id="inputEmail" name="email" type="email" oninput="comprobarEmail()">
+    </article>
+
+    <select name="comunidad" id="selectComunidad">
+        <option value="0">Escoja una de estas opciones</option>
+        <option value="Andalucia">Andalucía</option>
+        <option value="Aragon">Aragón</option>
+        <option value="Asturias">Principado de Asturias</option>
+        <option value="Baleares">Islas Baleares</option>
+        <option value="Pais-Vasco">País Vasco</option>
+        <option value="Canarias">Canarias</option>
+        <option value="Cantabria">Cantabria</option>
+        <option value="Castilla-La-Mancha">Castilla-La Mancha</option>
+        <option value="Castilla-Leon">Castilla y León</option>
+        <option value="Catalunya">Cataluña</option>
+        <option value="Extremadura">Extremadura</option>
+        <option value="Galicia">Galicia</option>
+        <option value="Madrid">Comunidad de Madrid</option>
+        <option value="Murcia">Región de Murcia</option>
+        <option value="Navarra">Comunidad Foral de Navarra</option>
+        <option value="La-Rioja">La Rioja</option>
+        <option value="Valencia">Comunidad Valenciana</option>
+        <option value="Ceuta">Ceuta</option>
+        <option value="Melilla">Melilla</option>
+    </select>
+
+    <select name="provincia" id="selectProvincia">
+        <option value="0">Escoja una de estas provincias</option>
+    </select>
+</form>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="js/provincias.js" type="text/javascript"></script>
+<script>
+    document.querySelector('#selectComunidad').addEventListener('change',function(){
+        const comunidad = document.querySelector('#selectComunidad').value;
+        console.log(comunidad);
+        const selectProvincias = document.querySelector('#selectProvincia');
+
+        selectProvincias.innerHTML=`<option value='0'>Provincias de ${comunidad}</option>`;
+        provincias[comunidad].forEach(function(provincia){
+            selectProvincias.innerHTML+=`<option>${provincia}</option>`;
+        });
+    });
+
+    function comprobarRepeticionContrasenya(){
+        const contrasenya=document.querySelector('#inputContrasenya').value;
+        const contrasenyaRepetida = document.querySelector('#inputRepetirContrasenya').value;
+        const check = document.querySelector('#check-contrasenya');
+        console.log(contrasenya + contrasenyaRepetida + check.outerHTML);
+        if(contrasenya!=contrasenyaRepetida){
+            check.style.visibility="visible !important";
+            check.style.color='red';
+        }else{
+            check.style.color='green';
+        }
+    }
+
+    function comprobarEmail(){
+        const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const inputEmail = document.getElementById('inputEmail');
+        const check = document.getElementById('check-email');
+        const selectComunidad = document.getElementById('selectComunidad');
+        const formulario = document.querySelector('form');
+
+        if (!emailRegExp.test(inputEmail.value)){
+            if (!document.getElementById('error-email')) {
+                const descripcion = document.createElement('p');
+                descripcion.id='error-email';
+                descripcion.textContent = "El correo electrónico no cumple con el patrón, por favor compruébelo";
+                descripcion.style.color = 'red';
+                formulario.insertBefore(descripcion,selectComunidad);
+                check.style.color='red';
+            }else{
+                check.style.color='red';
+            }
+        }else{
+            check.style.color='green';
+            formulario.removeChild(document.getElementById('error-email'));
+        }
+    }
+
+</script>
+</body>
+</html>

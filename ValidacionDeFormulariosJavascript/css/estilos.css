@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url("fondo.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    color: white;
+    margin-bottom: 50px;
+}
+form{
+    padding: 50px;
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input, select{
+    border: none;
+    background: rgba(255,255,255,.3);
+    border-radius: 5px;
+    margin:10px;
+    width:100%;
+    min-width: 300px;
+    height: 40px;
+}
+label{
+    color:white;
+}
+.input-validacion{
+    display: flex;
+    align-items: center;
+}
+ion-icon{
+    color: white;
+}
+
+input.invalid{
+    border:1px solid red;
+}
+
+/*form article:nth-of-type(4) > ion-icon{
+    color:red !important;
+}*/
