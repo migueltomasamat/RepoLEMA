@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="esquema.xsd">
+<cliente codigo="A-001">
+    <nombre>Carlos</nombre>
+    <apellidos>García Moreno</apellidos>
+    <dni>48576876N</dni>
+    <edad>28</edad>
+    <direccion>
+        <calle>Av. Reina Sofia</calle>
+        <numero>20</numero>
+    </direccion>
+    <telefono>965371111</telefono>
+    <telefono>658976547</telefono>
+</cliente>
+</clientes>
