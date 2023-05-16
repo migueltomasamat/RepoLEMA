@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet  type="text/xsl" href=“cliente.xsl"?>
+<clientes>
+    <titulo>Listado de clientes</titulo>
+    <cliente codigo="A-001">
+        <nombre>Carlos</nombre>
+        <apellidos>García Moreno</apellidos>
+        <dni>48576876N</dni>
+        <edad>28</edad>
+        <patrimonio>38000</patrimonio>
+        <direccion>
+            <calle>Av. Reina Sofia</calle>
+            <numero>20</numero>
+        </direccion>
+        <telefono>965371111</telefono>
+        <telefono>658976547</telefono>
+    </cliente>
+    <cliente codigo="B-002">
+        <nombre>Ana</nombre>
+        <apellidos>López Rodríguez</apellidos>
+        <dni>72349123M</dni>
+        <edad>35</edad>
+        <patrimonio>250000</patrimonio>
+        <direccion>
+            <calle>Calle Mayor</calle>
+            <numero>10</numero>
+        </direccion>
+        <telefono>912345678</telefono>
+    </cliente>
+    <cliente codigo="C-003">
+        <nombre>Pedro</nombre>
+        <apellidos>González Ramos</apellidos>
+        <dni>89761234L</dni>
+        <edad>42</edad>
+        <patrimonio>5000</patrimonio>
+        <direccion>
+            <calle>Paseo del Parque</calle>
+            <numero>5</numero>
+        </direccion>
+        <telefono>634987654</telefono>
+        <telefono>678234567</telefono>
+    </cliente>
+    <cliente codigo="D-004">
+        <nombre>María</nombre>
+        <apellidos>Ruiz García</apellidos>
+        <dni>34567890P</dni>
+        <edad>29</edad>
+        <patrimonio>1000</patrimonio>
+        <direccion>
+            <calle>Plaza de la Constitución</calle>
+            <numero>15</numero>
+        </direccion>
+        <telefono>910987654</telefono>
+    </cliente>
+    <cliente codigo="E-005">
+        <nombre>Antonio</nombre>
+        <apellidos>Hernández Sánchez</apellidos>
+        <dni>56789012K</dni>
+        <edad>52</edad>
+        <patrimonio>1300000</patrimonio>
+        <direccion>
+            <calle>Calle San Juan</calle>
+            <numero>8</numero>
+        </direccion>
+        <telefono>667890123</telefono>
+    </cliente>
+    <cliente codigo="F-006">
+        <nombre>Sofía</nombre>
+        <apellidos>Martínez López</apellidos>
+        <dni>98765432R</dni>
+        <edad>41</edad>
+        <patrimonio>47567</patrimonio>
+        <direccion>
+            <calle>Av. de la Libertad</calle>
+            <numero>25</numero>
+        </direccion>
+        <telefono>678345678</telefono>
+        <telefono>689076543</telefono>
+    </cliente>
+</clientes>
